@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/Icon">
+        <file>Icons/About.svg</file>
+        <file>Icons/Connection.svg</file>
+        <file>Icons/Exit.svg</file>
+        <file>Icons/Home Page.svg</file>
+        <file>Icons/Icon.svg</file>
+        <file>Icons/Language.svg</file>
+        <file>Icons/Messenger.svg</file>
+        <file>Icons/Options.svg</file>
+        <file>Icons/Qt.svg</file>
+        <file>Icons/Restore.svg</file>
+        <file>Icons/IconBW.svg</file>
+    </qresource>
+    <qresource prefix="/Language">
+        <file>Language/English.qm</file>
+        <file>Language/Persian.qm</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleName</key>
+        <string>Local Messenger</string>
+	<key>CFBundleVersion</key>
+        <string>0.6.0</string>
+	<key>CFBundleShortVersionString</key>
+        <string>0.6</string>
+	<key>CFBundleIdentifier</key>
+        <string>arashz4.localmessenger</string>
+	<key>CFBundleDisplayName</key>
+        <string>Local Messenger</string>
+	<key>CFBundleExecutable</key>
+        <string>Local Messenger</string>
+	<key>CFBundleIconFile</key>
+        <string>AppIcon.icns</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.6</string>
+	<key>CFBundleGetInfoString</key>
+        <string>Local Messenger 0.6.0, © 2014 - 2017 ARASHz4</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+</dict>
+</plist>
