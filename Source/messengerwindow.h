@@ -70,9 +70,10 @@ private slots:
 
     void on_sendPushButton_clicked();
 
+    void on_sendImagePushButton_clicked();
+
     void addMessage();
 
-    void on_sendPhotoPushButton_clicked();
 };
 
 #endif // MAINWINDOW_H

@@ -126,7 +126,7 @@ void QtSingleApplication::startApp()
 
 bool QtSingleApplication::appChackFiles()
 {
-    bool enable = false /*true false*/;
+    bool enable = true; //true false
 
     if(enable)
     {
@@ -188,12 +188,6 @@ bool QtSingleApplication::appChackFiles()
             }
         }
         QString PlugIns = Back + "/PlugIns";
-        QString Frameworks = Back + "/Frameworks";
-
-        if(!QDir(Frameworks + "/QtSvg.framework").exists())
-        {
-            Message = Message + "\n" + "QtSvg.framework";
-        }
 
         if(!QFileInfo(PlugIns + "/imageformats/libqgif.dylib").isFile())
         {
@@ -230,7 +224,7 @@ bool QtSingleApplication::appChackFiles()
             Message = Message + "\n" + "libqwebp.dylib";
         }
 
-        #elif defined(Q_OS_LINUX)
+        #elif defined(Q_OS_LINUX) && !defined(Q_OS_ANDROID)
         if(!QFileInfo(QApplication::applicationDirPath() + "/lib/libQt5Svg.so.5").isFile())
         {
             Message = Message + "\n" + "libQt5Svg.so.5";

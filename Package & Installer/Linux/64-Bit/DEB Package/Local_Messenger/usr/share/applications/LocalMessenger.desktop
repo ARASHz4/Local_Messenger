@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Local Messenger
+GenericName=Internet
+Comment=Local Messenger by ARASHz4
+Exec=LocalMessenger %f
+Icon=LocalMessenger.png
+NoDisplay=false
+Categories=Internet;
+StartupNotify=true
+Terminal=false

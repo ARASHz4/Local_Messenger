@@ -1,0 +1,10 @@
+#!/bin/sh
+
+export LD_LIBRARY_PATH=/opt/Local_Messenger/lib
+export QT_PLUGIN_PATH=/opt/Local_Messenger/plugins
+
+if [ $# -lt 1 ]; then
+  /opt/Local_Messenger/Local\ Messenger
+else
+  /opt/Local_Messenger/Local\ Messenger "$@"
+fi

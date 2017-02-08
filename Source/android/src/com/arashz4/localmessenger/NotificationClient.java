@@ -16,9 +16,10 @@ public class NotificationClient extends org.qtproject.qt5.android.bindings.QtAct
         m_instance = this;
     }
 
-    public static void notify(String s)
+    public static void showNotification(String message)
     {
-        if (m_notificationManager == null) {
+        if (m_notificationManager == null)
+        {
             m_notificationManager = (NotificationManager)m_instance.getSystemService(Context.NOTIFICATION_SERVICE);
             m_builder = new Notification.Builder(m_instance);
             m_builder.setSmallIcon(R.drawable.icon);
@@ -26,7 +27,7 @@ public class NotificationClient extends org.qtproject.qt5.android.bindings.QtAct
             m_builder.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
         }
 
-        m_builder.setContentText(s);
+        m_builder.setContentText(message);
         m_notificationManager.notify(1, m_builder.build());
     }
 }

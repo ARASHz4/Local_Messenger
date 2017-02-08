@@ -94,5 +94,4 @@ DISTFILES += \
     android/build.gradle \
     android/gradle/wrapper/gradle-wrapper.properties \
     android/gradlew.bat \
-    android/src/NotificationClient.java \
     android/src/com/arashz4/localmessenger/NotificationClient.java

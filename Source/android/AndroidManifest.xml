@@ -1,11 +1,7 @@
 <?xml version="1.0"?>
-<manifest package="com.arashz4.localmessenger" xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="0.6.0" android:versionCode="9" android:installLocation="auto">
+<manifest package="com.arashz4.localmessenger" xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="0.6.5" android:versionCode="10" android:installLocation="auto">
     <application android:hardwareAccelerated="true" android:name="org.qtproject.qt5.android.bindings.QtApplication" android:label="Local Messenger" android:icon="@drawable/icon">
-        <activity android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|layoutDirection|locale|fontScale|keyboard|keyboardHidden|navigation"
-                android:name="com.arashz4.localmessenger.NotificationClient"
-                android:label="Local Messenger"
-                android:screenOrientation="unspecified"
-                android:launchMode="singleTop">
+        <activity android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|layoutDirection|locale|fontScale|keyboard|keyboardHidden|navigation" android:name="com.arashz4.localmessenger.NotificationClient" android:label="Local Messenger" android:screenOrientation="unspecified" android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>

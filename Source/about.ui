@@ -277,7 +277,7 @@
       <number>0</number>
      </property>
      <item>
-      <widget class="QToolButton" name="AboutQtButton">
+      <widget class="QPushButton" name="AboutQtButton">
        <property name="cursor">
         <cursorShape>PointingHandCursor</cursorShape>
        </property>
@@ -287,6 +287,9 @@
        <property name="icon">
         <iconset resource="resource.qrc">
          <normaloff>:/Icon/Icons/Qt.svg</normaloff>:/Icon/Icons/Qt.svg</iconset>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
@@ -320,6 +323,10 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>CloseButton</tabstop>
+  <tabstop>AboutQtButton</tabstop>
+ </tabstops>
  <resources>
   <include location="resource.qrc"/>
  </resources>

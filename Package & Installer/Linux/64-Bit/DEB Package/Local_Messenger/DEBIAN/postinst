@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# update xn shared libraries
+#sudo ldconfig /usr/lib/Local_Messenger/lib

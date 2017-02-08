@@ -1,0 +1,9 @@
+Package: local-messenger
+Version: 0.6.5
+Architecture: amd64
+Installed-Size: 50
+Section: network
+Priority: optional
+maintainer: ARASHz4 <localmessenger@arashz4.com>
+Homepage: https://github.com/ARASHz4/Local_Messenger
+Description: Local Messenger
