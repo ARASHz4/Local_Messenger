@@ -173,7 +173,7 @@ bool QtSingleApplication::appChackFiles()
             Message = Message + "\n" + "qwebp.dll";
         }
 
-        #elif defined(Q_OS_MAC)
+        #elif defined(Q_OS_MAC) && !defined(Q_OS_IOS)
         QStringList CD (QApplication::applicationDirPath().split("/"));
         QString Back;
         for(int i=0; i<CD.count()-1; i++)
@@ -188,6 +188,11 @@ bool QtSingleApplication::appChackFiles()
             }
         }
         QString PlugIns = Back + "/PlugIns";
+
+        if(!QFileInfo(PlugIns + "/iconengines/libqsvgicon.dylib").isFile())
+        {
+            Message = Message + "\n" + "libqsvgicon.dylib";
+        }
 
         if(!QFileInfo(PlugIns + "/imageformats/libqgif.dylib").isFile())
         {
@@ -225,9 +230,9 @@ bool QtSingleApplication::appChackFiles()
         }
 
         #elif defined(Q_OS_LINUX) && !defined(Q_OS_ANDROID)
-        if(!QFileInfo(QApplication::applicationDirPath() + "/lib/libQt5Svg.so.5").isFile())
+        if(!QFileInfo(QApplication::applicationDirPath() + "/plugins/platformthemes/libqgtk3.so").isFile())
         {
-            Message = Message + "\n" + "libQt5Svg.so.5";
+            Message = Message + "\n" + "libqgtk3.so";
         }
 
         if(!QFileInfo(QApplication::applicationDirPath() + "/plugins/imageformats/libqgif.so").isFile())

@@ -38,14 +38,14 @@ void Options::Start()
     RestoreDefaults.setText(tr("Restore Defaults"));
     OK.setDefault(true);
 
-    #if !defined(Q_OS_ANDROID)
+    #if defined(Q_OS_ANDROID) || defined(Q_OS_IOS)
+    ui->OptionsButtonBox->addButton(&OK, QDialogButtonBox::AcceptRole);
+    ui->OptionsButtonBox->addButton(&Cancel, QDialogButtonBox::RejectRole);
+    #else
     ui->OptionsButtonBox->addButton(&OK, QDialogButtonBox::AcceptRole);
     ui->OptionsButtonBox->addButton(&Cancel, QDialogButtonBox::RejectRole);
     ui->OptionsButtonBox->addButton(&Apply, QDialogButtonBox::ApplyRole);
     ui->OptionsButtonBox->addButton(&RestoreDefaults, QDialogButtonBox::ResetRole);
-    #else
-    ui->OptionsButtonBox->addButton(&OK, QDialogButtonBox::AcceptRole);
-    ui->OptionsButtonBox->addButton(&Cancel, QDialogButtonBox::RejectRole);
     #endif
 
     ui->listWidgetOptions->setCurrentRow(0);

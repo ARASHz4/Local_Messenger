@@ -283,7 +283,7 @@ void MessengerWindow::on_sendImagePushButton_clicked()
         QFileDialog OpenImage(this);
         OpenImage.setFileMode(QFileDialog::ExistingFile);
         OpenImage.setNameFilter(tr("Image") + " (*.png ; *.jpg ; *.jpeg ; *.bmp ; *.tif ; *.tiff ; *.webp ; *.svg ;"
-                                              " *.gif ; *.xpm ; *.pnm ; *.ppm ; *.pgm ; *.wbmp ; *.xbm ; *.pbm);;");
+                                              " *.gif ; *.xpm ; *.pnm ; *.ppm ; *.pgm ; *.wbmp ; *.xbm ; *.pbm)");
 
         OpenImage.setWindowTitle(tr("Open Image"));
 
@@ -324,7 +324,7 @@ void MessengerWindow::on_sendImagePushButton_clicked()
                 SettingsAP.endGroup();
             }
 
-            if(ui->messageTextEdit->toPlainText() == "\n")
+            if(ui->messageTextEdit->toPlainText().isEmpty())
             {
                 ui->messageTextEdit->setHtml("<p align=""right""><img src=\"" + OpenImage.selectedFiles()[0] + "\"/></p>");
             }
@@ -369,28 +369,23 @@ void MessengerWindow::addMessage()
 
         if(!QDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)).exists())
         {
-            if(!QDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)).cdUp())
+            QStringList AppData (QStandardPaths::writableLocation(QStandardPaths::AppDataLocation).split("/"));
+            QString folder;
+            for(int i=0; i<AppData.count(); i++)
             {
-                QStringList CD (QFileInfo(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)).absolutePath().split("/"));
-                QString Back;
-                for(int i=0; i<CD.count(); i++)
+                if(i == 0)
                 {
-                    if(i == 0)
-                    {
-                        Back = CD[i];
-                    }
-                    else
-                    {
-                        Back = Back + "/" + CD[i];
-                    }
+                    folder = AppData[i];
+                }
+                else
+                {
+                    folder = folder + "/" + AppData[i];
                 }
 
-                QDir().mkdir(Back);
-                QDir().mkdir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation));
-            }
-            else
-            {
-                QDir().mkdir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation));
+                if(!QDir(folder).exists())
+                {
+                    QDir().mkdir(folder);
+                }
             }
         }
 
@@ -398,7 +393,7 @@ void MessengerWindow::addMessage()
         {
             if(SaveImage.save(&saveFile, "JPG"))
             {
-                if(ui->messageTextEdit->toPlainText() == "\n")
+                if(ui->messageTextEdit->toPlainText().isEmpty())
                 {
                     ui->messageTextEdit->setHtml("<p align=""left""><img src=\"" + saveFile.fileName() + "\"/></p>");
                 }
@@ -429,7 +424,7 @@ void MessengerWindow::addMessage()
         fontSize = "";
         #endif
 
-        if(ui->messageTextEdit->toPlainText() == "\n")
+        if(ui->messageTextEdit->toPlainText().isEmpty())
         {
             ui->messageTextEdit->setHtml("<p align=""left""><span style=""font-size:" + fontSize
                                          + "pt;color:#0055ff;"">" + Message + "</span></p>");

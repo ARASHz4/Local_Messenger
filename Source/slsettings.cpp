@@ -87,7 +87,7 @@ void SLSettings::LoadSettings()
             QSettings settingAddStartUp("HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", QSettings::NativeFormat);
             settingAddStartUp.setValue(QApplication::applicationName(), "\"" +
                                        QDir::toNativeSeparators(QApplication::applicationFilePath()) + "\" " + "-start");
-            #elif defined(Q_OS_MAC)
+            #elif defined(Q_OS_MAC) && !defined(Q_OS_IOS)
             QFile file(QStandardPaths::writableLocation(QStandardPaths::HomeLocation) + "/Library/LaunchAgents/"
                        + QApplication::organizationName().toLower().replace(" ", "") + "."
                        + QApplication::applicationName().toLower().replace(" ", "") + ".plist");
@@ -111,7 +111,7 @@ void SLSettings::LoadSettings()
                           "\n</dict>"
                           "\n</plist>" << endl;
             }
-            #elif defined(Q_OS_LINUX)
+            #elif defined(Q_OS_LINUX) && !defined(Q_OS_ANDROID)
             QFile file(QStandardPaths::writableLocation(QStandardPaths::HomeLocation) + "/.config/autostart/"
                        + QApplication::applicationName().replace(" ", "") + ".desktop");
 
@@ -231,7 +231,7 @@ void SLSettings::SaveSettings()
         QSettings settingAddStartUp("HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", QSettings::NativeFormat);
         settingAddStartUp.setValue(QApplication::applicationName(), "\"" +
                                    QDir::toNativeSeparators(QApplication::applicationFilePath()) + "\" " + "-start");
-        #elif defined(Q_OS_MAC)
+        #elif defined(Q_OS_MAC) && !defined(Q_OS_IOS)
         QFile file(QStandardPaths::writableLocation(QStandardPaths::HomeLocation) + "/Library/LaunchAgents/"
                    + QApplication::organizationName().toLower().replace(" ", "") + "."
                    + QApplication::applicationName().toLower().replace(" ", "") + ".plist");
@@ -267,7 +267,7 @@ void SLSettings::SaveSettings()
             msg.setDefaultButton(QMessageBox::Ok);
             msg.exec();
         }
-        #elif defined(Q_OS_LINUX)
+        #elif defined(Q_OS_LINUX) && !defined(Q_OS_ANDROID)
         QFile file(QStandardPaths::writableLocation(QStandardPaths::HomeLocation)
                    + "/.config/autostart/" + QApplication::applicationName().replace(" ", "") + ".desktop");
 
@@ -305,7 +305,7 @@ void SLSettings::SaveSettings()
         #if defined(Q_OS_WIN)
         QSettings settingDeleteStartUp("HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", QSettings::NativeFormat);
         settingDeleteStartUp.remove(QApplication::applicationName());
-        #elif defined(Q_OS_MAC)
+        #elif defined(Q_OS_MAC) && !defined(Q_OS_IOS)
         QFile file(QStandardPaths::writableLocation(QStandardPaths::HomeLocation) + "/Library/LaunchAgents/"
                    + QApplication::organizationName().toLower().replace(" ", "") + "."
                    + QApplication::applicationName().toLower().replace(" ", "") + ".plist");
@@ -341,7 +341,7 @@ void SLSettings::SaveSettings()
             msg.setDefaultButton(QMessageBox::Ok);
             msg.exec();
         }
-        #elif defined(Q_OS_LINUX)
+        #elif defined(Q_OS_LINUX) && !defined(Q_OS_ANDROID)
         QFile file(QStandardPaths::writableLocation(QStandardPaths::HomeLocation)
                    + "/.config/autostart/" + QApplication::applicationName().replace(" ", "") + ".desktop");
 

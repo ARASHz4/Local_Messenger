@@ -8,13 +8,7 @@ QT += core gui network svg
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-!android{
-    TARGET = 'Local Messenger'
-}
-
-android{
-    TARGET = 'LocalMessenger'
-}
+TARGET = 'Local Messenger'
 
 TEMPLATE = app
 
@@ -26,15 +20,26 @@ win32{
 }
 
 mac{
-    QMAKE_INFO_PLIST = Mac/Info.plist
-    ICON = Mac/AppIcon.icns
+    QMAKE_INFO_PLIST = macOS/Info.plist
+    ICON = macOS/AppIcon.icns
 }
 
 android{
     QT += androidextras
+
+    TARGET = 'LocalMessenger'
+
+    ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 }
 
-ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
+ios{
+    QMAKE_INFO_PLIST = iOS/Info.plist
+
+    ios_icon.files = $$files($$PWD/iOS/AppIcon*.png)
+    QMAKE_BUNDLE_DATA += ios_icon
+}
+
+
 
 TRANSLATIONS = Translate/English.ts \
                Translate/Persian.ts
@@ -79,8 +84,8 @@ DISTFILES += \
     Linux/icons/hicolor/256x256/apps/LocalMessenger.png \
     Linux/icons/hicolor/32x32/apps/LocalMessenger.png \
     Linux/icons/hicolor/48x48/apps/LocalMessenger.png \
-    Mac/Info.plist \
-    Mac/AppIcon.icns \
+    macOS/Info.plist \
+    macOS/AppIcon.icns \
     Windows/WinRes.rc \
     Windows/WinDetails.h \
     Windows/manifest \
@@ -94,4 +99,13 @@ DISTFILES += \
     android/build.gradle \
     android/gradle/wrapper/gradle-wrapper.properties \
     android/gradlew.bat \
-    android/src/com/arashz4/localmessenger/NotificationClient.java
+    android/src/com/arashz4/localmessenger/NotificationClient.java \
+    iOS/AppIcon29x29.png \
+    iOS/AppIcon29x29@2x.png \
+    iOS/AppIcon29x29@3x.png \
+    iOS/AppIcon40x40@2x.png \
+    iOS/AppIcon40x40@3x.png \
+    iOS/AppIcon57x57.png \
+    iOS/AppIcon57x57@2x.png \
+    iOS/AppIcon60x60@2x.png \
+    iOS/AppIcon60x60@3x.png
