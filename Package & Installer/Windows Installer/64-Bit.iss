@@ -1,5 +1,5 @@
 #define MyAppName "Local Messenger (64-Bit)"
-#define MyAppVersion "0.6.5"
+#define MyAppVersion "0.7.0"
 #define MyAppPublisher "ARASHz4"
 #define MyAppURL "https://github.com/ARASHz4/Local_Messenger"
 #define MyAppExeName "Local Messenger.exe"

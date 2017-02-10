@@ -1,5 +1,5 @@
 Package: local-messenger
-Version: 0.6.5
+Version: 0.7.0
 Architecture: amd64
 Installed-Size: 50
 Section: network

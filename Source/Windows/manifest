@@ -3,7 +3,7 @@
    <assemblyIdentity
       name="ARASHz4.LocalMessenger"
       processorArchitecture="*"
-      version="0.6.5.0"
+      version="0.7.0.0"
       type="win32"/>
    <description>Local Messenger</description>
    <dependency />

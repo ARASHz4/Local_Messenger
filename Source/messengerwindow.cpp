@@ -69,10 +69,10 @@ void MessengerWindow::Start()
 
         Tray->connect(Tray, SIGNAL(messageClicked()), this, SLOT(on_actionRestoreWindow_triggered()));
 
-        #if !defined(Q_OS_MAC)
-        Tray->setIcon(QIcon(":/Icon/Icons/Icon.svg"));
-        #else
+        #if defined(Q_OS_MAC)
         Tray->setIcon(QIcon(":/Icon/Icons/IconBW.svg"));
+        #else
+        Tray->setIcon(QIcon(":/Icon/Icons/Icon.svg"));
         #endif
 
         Tray->setContextMenu(TrayMenu);
@@ -404,7 +404,7 @@ void MessengerWindow::addMessage()
                 }
 
                 #if !defined(Q_OS_ANDROID)
-                Tray->showMessage(tr("New message"), tr("Image"), QSystemTrayIcon::NoIcon);
+                Tray->showMessage(tr("New message"), tr("Image"));
                 #else
                 QAndroidJniObject AndroidNotification = QAndroidJniObject::fromString(tr("Image"));
                 QAndroidJniObject::callStaticMethod<void>("com/arashz4/localmessenger/NotificationClient", "showNotification",
@@ -436,7 +436,7 @@ void MessengerWindow::addMessage()
         }
 
         #if !defined(Q_OS_ANDROID)
-        Tray->showMessage(tr("New message"), Message, QSystemTrayIcon::NoIcon);
+        Tray->showMessage(tr("New message"), Message);
         #else
         QAndroidJniObject AndroidNotification = QAndroidJniObject::fromString(Message);
         QAndroidJniObject::callStaticMethod<void>("com/arashz4/localmessenger/NotificationClient", "showNotification",

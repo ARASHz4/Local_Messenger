@@ -39,8 +39,6 @@ ios{
     QMAKE_BUNDLE_DATA += ios_icon
 }
 
-
-
 TRANSLATIONS = Translate/English.ts \
                Translate/Persian.ts
 

@@ -2,11 +2,11 @@
 #ifndef WINDETAILS_H
 #define WINDETAILS_H
 
-#define VER_FILEVERSION             0,6,5
-#define VER_FILEVERSION_STR         "0.6.5"
+#define VER_FILEVERSION             0,7,0
+#define VER_FILEVERSION_STR         "0.7.0"
 
-#define VER_PRODUCTVERSION          0,6,5
-#define VER_PRODUCTVERSION_STR      "0,6,5"
+#define VER_PRODUCTVERSION          0,7,0
+#define VER_PRODUCTVERSION_STR      "0,7,0"
 
 #define VER_COMPANYNAME_STR         "ARASHz4"
 #define VER_FILEDESCRIPTION_STR     "Local Messenger"

@@ -5,9 +5,9 @@
 	<key>CFBundleName</key>
         <string>Local Messenger</string>
 	<key>CFBundleVersion</key>
-        <string>0.6.5</string>
+        <string>0.7.0</string>
 	<key>CFBundleShortVersionString</key>
-        <string>0.6</string>
+        <string>0.7</string>
 	<key>CFBundleIdentifier</key>
         <string>arashz4.localmessenger</string>
 	<key>CFBundleDisplayName</key>
@@ -19,7 +19,7 @@
 	<key>LSMinimumSystemVersion</key>
 	<string>10.6</string>
 	<key>CFBundleGetInfoString</key>
-        <string>Local Messenger 0.6.5, © 2014 - 2017 ARASHz4</string>
+        <string>Local Messenger 0.7.0, © 2014 - 2017 ARASHz4</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleSignature</key>
